@@ -7,7 +7,7 @@ Specifically this was made to work with ibuffer-projectile so other groups can b
 (require 'ibuffer-projectile)
 (setq ibuffer-dynamic-filter-groups '((("Irc" . (mode . erc-mode)))
                                       ibuffer-projectile-generate-filter-groups
-    				                  my-dynamic-filter-groups
+                                      my-dynamic-filter-groups
                                       (("System" . (name . "^\\*.*\\*$")))))
 (ibuffer-dynamic-groups t)
 ```
