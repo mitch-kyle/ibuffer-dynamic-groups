@@ -3,7 +3,7 @@ Make ibuffer update it's filter groups each time it is invoked according to a an
 
 Specifically this was made to work with ibuffer-projectile so other groups can be added e.g:
 ```elisp
-(require 'ibuffer)
+(require 'ibuffer-dynamic-groups)
 (require 'ibuffer-projectile)
 (setq ibuffer-dynamic-filter-groups '((("Irc" . (mode . erc-mode)))
                                       ibuffer-projectile-generate-filter-groups
