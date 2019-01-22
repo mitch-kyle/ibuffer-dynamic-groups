@@ -24,7 +24,7 @@ Note: Disabling ibuffer-dynamic-groups will not unset `ibuffer-filter-groups` bu
 
 
 ### But wait a minute... nothing happened.
-but by default the list of filter groups returned is empty
+by default the list of filter groups returned is empty
 
 ### So how do I make these "dynamic" "filter groups" I came here for?
 however you want, I recommend advising the `ibuffer-dynamic-groups-generate` function. like so:
@@ -54,7 +54,7 @@ This will add the "System" group to the end of our list of filter groups.
 see `(describe-function 'add-function)` for more information
 
 ### that's not dynamic.
-how about these examples:
+how about these examples then:
 
 ```elisp
   (require 'ibuffer-projectile)
