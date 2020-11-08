@@ -112,8 +112,8 @@ PROPS an alist with the following optional entries:
   `depth' determine where in the generation FUNCTION is called. default 0. -100 would be
 the first one called and 100 would be the last one"
   (advice-add 'ibuffer-dynamic-groups-generate
-	      :filter-return function
-	      props))
+              :filter-return function
+              props))
 
 (defun ibuffer-dynamic-groups-remove (function)
   "Convience function to remove functions from the group generation process. See `advice-remove'.
@@ -133,13 +133,11 @@ FUNCTION a function or name of function to remove"
 
 (defun ibuffer-dynamic-groups-enable ()
   (unless (ibuffer-dynamic-groups-enabled?)
-    (advice-add 'ibuffer-update :before #'ibuffer-dynamic-groups-set-filter-groups)
-    (message "ibuffer dynamic groups enabled")))
+    (advice-add 'ibuffer-update :before #'ibuffer-dynamic-groups-set-filter-groups)))
 
 (defun ibuffer-dynamic-groups-disable ()
   (when (ibuffer-dynamic-groups-enabled?)
-    (advice-remove 'ibuffer-update #'ibuffer-dynamic-groups-set-filter-groups)
-    (message "ibuffer dynamic groups disabled")))
+    (advice-remove 'ibuffer-update #'ibuffer-dynamic-groups-set-filter-groups)))
 
 ;;;###autoload
 (defun ibuffer-dynamic-groups (&rest args)
@@ -149,10 +147,10 @@ args - if there is some argument the set according to it, else toggle."
   (interactive)
   (if args
       (if (car args)
-	  (ibuffer-dynamic-groups-enable)
-	(ibuffer-dynamic-groups-disable))
+          (ibuffer-dynamic-groups-enable)
+        (ibuffer-dynamic-groups-disable))
     (if (ibuffer-dynamic-groups-enabled?)
-	(ibuffer-dynamic-groups-disable)
+        (ibuffer-dynamic-groups-disable)
       (ibuffer-dynamic-groups-enable))))
 
 (provide 'ibuffer-dynamic-groups)
